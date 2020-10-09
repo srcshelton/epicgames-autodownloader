@@ -1,6 +1,6 @@
 #! python3
 
-# Free_Games.py - A script that Windows Task Scheduler can run to go and get me them sweet sweet free games I'll probably never play
+# autodownload.py - A script that Windows Task Scheduler can run to go and get me them sweet sweet free games I'll probably never play
 
 from bs4 import BeautifulSoup
 from selenium import webdriver

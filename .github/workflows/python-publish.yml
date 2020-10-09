@@ -39,9 +39,9 @@ jobs:
       run: |
         seleniumbase install chromedriver
         seleniumbase install geckodriver
-    - name: Get Free Games
+    - name: Acquire weekly free Epic Games giveaways
       env:
         email: ${{ secrets.email }}
         password: ${{ secrets.password }}
       run: |
-        python Free_Games.py
+        python autodownload.py

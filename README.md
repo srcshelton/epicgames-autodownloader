@@ -1,13 +1,4 @@
-# Free_Games.py Description
-
-### 更新(14/08/2020)
-- 利用github action实现每天零点自动领取。
-
-# 设置
-fork项目后，在Settings中的Secrets设置两个Secret。
-- EMAIL(Epic登录邮箱)
-- PASSWORD(Epic登录密码)
-
+# autodownload.py Description
 
 Literally just a script that is automatically ran via Windows Task Scheduler or Cron that logs into the Epic Games Store website and grabs the free games for the week. I've tested it on Windows, but there isn't any reason it wouldn't work on Linux as well. Just change the top line from "#! python3" to "#!/usr/bin/python3" and it should be fine. 
 
@@ -23,12 +14,19 @@ Finally, a warm thank you to:
 Hope you enjoy!
   - Mason Stooksbury <><
 
+### Update (14/08/2020)
+  - Use github action to automatically run at midnight every day.
 
-### Updates! (07/29/2020)
+### Update (29/07/2020)
   - Thanks to Spifffff again for helping out again by fixing wait times and the cookie banner. The script seems much more robust and bulletproof.
 
-
 # Setup
+
+Fork the project, then create two Secrets in Project Settings:
+
+  - `email` (Epic Games user account email)
+  - `password` (Epic Games account password)
+
 The Python script needs a few things to run:
   - lxml (for parsing the HTML from the webpage) This can be installed by running "pip3 install lxml" in a command prompt/terminal
   - selenium (for roboting the website) This can be installed by running "pip3 install selenium" in a command prompt/terminal
@@ -37,21 +35,3 @@ The Python script needs a few things to run:
   - Firefox (the browser) You can technically do all of this with Chrome, but it involves some more setup with selenium and particular drivers and I'm just too lazy. This works perfectly fine.
   - Replace the "email" and "password" variables in the code to match your Epic Games Store account. Be sure to leave the single quotes where they are.
   - Finally, you'll also want to jump in and replace the user-agent. There are instructions inside the script on how to do this.
-  
-  
-  # Setting up Windows Task Scheduler
-  These steps should help you get Windows Task Scheduler setup in such a way that it will wake your computer from sleep and grab your free games then go back to sleep. It will also be setup to run again if something goes wrong as well as kill itself if it goes haywire. I realize the first picture shows it being setup for Vista and Windows Server 2008, but this was the only way it would work on Windows 10 without doing some wonky BIOS setup that only worked for some people.
-  - Fill out General:
-    - ![General](https://github.com/MasonStooksbury/Free-Games/blob/master/WTS_Setup/General.png)
-  
-  - Fill out Triggers:
-    - ![Triggers](https://github.com/MasonStooksbury/Free-Games/blob/master/WTS_Setup/Triggers.png)
-  
-  - Fill out Actions:
-    - ![Actions](https://github.com/MasonStooksbury/Free-Games/blob/master/WTS_Setup/Actions.png)
-  
-  - Fill out Conditions:
-    - ![Conditions](https://github.com/MasonStooksbury/Free-Games/blob/master/WTS_Setup/Conditions.png)
-  
-  - Fill out Settings:
-    - ![Settings](https://github.com/MasonStooksbury/Free-Games/blob/master/WTS_Setup/Settings.png)
